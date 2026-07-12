@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Method — Threat Board</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<div class="page">
+<nav class="topbar">
+  <a class="brand" href="../index.html">THREAT_BOARD</a>
+  <div class="toplinks">
+    <a href="../index.html#lenses">LENSES</a>
+    <a href="../index.html#states">STATES</a>
+    <a href="../method/index.html">METHOD</a>
+    <span class="runstat">RUN 2026-07-11 · <b class="ok">OK</b></span>
+  </div>
+</nav>
+<main>
+
+<article class="method">
+  <p class="kicker seclabel" style="margin-bottom:0"><span>METHOD</span></p>
+  <h1>How these verdicts are made</h1>
+  <p class="lede">Every bill on this site was read and classified by a machine pipeline, then published only
+  when the pipeline was willing to stand behind the verdict. This page explains each step,
+  so you can decide how much to trust what you see.</p>
+  <div class="steps">
+    <div class="step"><span class="n">01</span><div><div class="name">Ingest</div><div class="text">Bill metadata and status changes are pulled from state legislature feeds for every tracked session. Nothing is filtered at this stage.</div></div></div>
+    <div class="step"><span class="n">02</span><div><div class="name">Enrich</div><div class="text">The full bill text is fetched and normalized. The excerpt shown on each bill page is exactly the text the classifier read.</div></div></div>
+    <div class="step"><span class="n">03</span><div><div class="name">Classify</div><div class="text">A language-model judge reads the bill against each policy lens and returns membership, stance, a confidence score, and a one-sentence rationale.</div></div></div>
+    <div class="step"><span class="n">04</span><div><div class="name">Verify</div><div class="text">Verdicts below the confidence bar are re-run with self-consistency: five independent samples, majority vote.</div></div></div>
+    <div class="step"><span class="n">05</span><div><div class="name">Escalate</div><div class="text">Persistent disagreement goes to a swarm of stronger models. The tier badge on each verdict tells you how far it went.</div></div></div>
+    <div class="step"><span class="n">06</span><div><div class="name">Human review <span class="chip chip-review">UNDER REVIEW</span></div><div class="text">Anything still under the bar ships marked UNDER REVIEW with the judge agreement count — never silently.</div></div></div>
+  </div>
+  <p class="outro">Only bills judged to be lens members are published. Verdicts at or above 95% confidence
+  appear as firm; everything else is tagged under review. The footer of every page carries
+  the pipeline run date and the total scanned count — absence of a bill means it was
+  scanned and cleared, not missed.</p>
+  <p class="outro reactionary-note">The <span class="billno anti">REACTIONARY</span> lens
+  is an analytical rubric, not a keyword filter: a bill counts as reactionary when it rolls back
+  the rights or gains of the working class — including LGBTQ+ people, immigrants, women, and
+  tenants — judged against a written rubric with the tripped topic-lens signals as evidence.</p>
+</article>
+</main>
+<footer class="pagefoot">
+  <span>PIPELINE RUN 2026-07-11</span>
+  <span>306849 SCANNED · 8511 FLAGGED · 7056 UNDER REVIEW · 50 STATES</span>
+  <a href="../method/index.html">HOW VERDICTS ARE MADE</a>
+</footer>
+</div>
+<script src="../assets/site.js"></script>
+</body>
+</html>
+
